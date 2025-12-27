@@ -98,6 +98,7 @@ double get_valid_double_input(const string& prompt){
         }
     }
 }
+
 string get_valid_string_input(const string& prompt, bool allow_empty = false){
     string input;
     while(true){
@@ -112,6 +113,7 @@ string get_valid_string_input(const string& prompt, bool allow_empty = false){
         return input;
     }
 }
+
 void load_users(vector<User>& users){
     ifstream file("users.csv");
     if(!file.is_open()){
@@ -133,6 +135,7 @@ void load_users(vector<User>& users){
     file.close();
     cout << "成功加载 " << users.size() << " 个用户。" << endl;
 }
+
 void save_users(const vector<User>& users){
     ofstream file("users.csv");
     if(!file.is_open()){
@@ -145,6 +148,7 @@ void save_users(const vector<User>& users){
     file.close();
     cout << "用户数据已保存。" << endl;
 }
+
 void load_transactions(User& user){
     string filename = "transactions_" + user.user_id + ".csv";
     ifstream file(filename);
